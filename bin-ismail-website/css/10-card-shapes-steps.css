@@ -1,0 +1,127 @@
+/* varied card shapes */
+.pack {
+  position: relative;
+  border-radius: 10px 34px 34px 34px;
+}
+.pack::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--alt);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+.grid .p {
+  transition:
+    rotate 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    translate 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+.grid .p:nth-child(3n + 1) {
+  rotate: -1.3deg;
+}
+.grid .p:nth-child(3n + 2) {
+  rotate: 1deg;
+  translate: 0 6px;
+}
+.grid .p:nth-child(3n) {
+  rotate: -0.6deg;
+}
+.grid .p:hover {
+  rotate: 0deg;
+  translate: 0 -4px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+}
+.grid .p::after {
+  inset: auto;
+  left: 50%;
+  top: 9px;
+  width: 56px;
+  height: 18px;
+  margin-left: -28px;
+  rotate: -3deg;
+  opacity: 0.9;
+  filter: none;
+  border-radius: 2px;
+  background: rgba(255, 213, 0, 0.78);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.grid .p:nth-child(3n + 2)::after {
+  background: rgba(0, 174, 239, 0.75);
+  rotate: 3deg;
+}
+.grid .p:nth-child(3n)::after {
+  background: rgba(236, 0, 140, 0.7);
+  rotate: -2deg;
+}
+.steps li {
+  position: relative;
+}
+.steps li:nth-child(2)::after,
+.steps li:nth-child(3)::after {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  padding: 6px 12px;
+  border: 2.5px double currentColor;
+  border-radius: 8px;
+  font:
+    800 14px/1 "Bricolage Grotesque",
+    Inter,
+    sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  pointer-events: none;
+}
+.steps li:nth-child(2)::after {
+  content: "Approved";
+  color: #ec008c;
+  rotate: 8deg;
+}
+.steps li:nth-child(3)::after {
+  content: "Delivered";
+  color: #009edb;
+  rotate: -6deg;
+}
+
+.nfc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.14) 2.2px,
+      transparent 2.7px
+    )
+    0 0/16px 16px;
+  -webkit-mask-image: linear-gradient(115deg, transparent 40%, #000 100%);
+  mask-image: linear-gradient(115deg, transparent 40%, #000 100%);
+}
+.nfc > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ft-bot p:first-child::before {
+  content: "";
+  display: inline-block;
+  width: 34px;
+  height: 5px;
+  border-radius: 3px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background: linear-gradient(
+    90deg,
+    #00aeef 0 25%,
+    #ec008c 25% 50%,
+    #ffd500 50% 75%,
+    var(--ink) 75% 100%
+  );
+}

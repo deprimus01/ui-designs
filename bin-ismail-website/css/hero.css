@@ -1,0 +1,165 @@
+.hgrid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+@media (min-width: 901px) {
+  .hgrid .hl h1 {
+    font-size: clamp(40px, 5.4vw, 66px);
+  }
+}
+.hs {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 470px;
+  justify-self: end;
+}
+.pk {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s);
+  aspect-ratio: 1;
+  z-index: var(--z);
+  border-radius: 24px;
+  border: 3px solid var(--card);
+  box-shadow: var(--sh);
+  transform: translate(
+      calc(var(--px, 0) * var(--z) * 9px),
+      calc(var(--py, 0) * var(--z) * 9px)
+    )
+    rotate(var(--r));
+  transition:
+    transform 0.5s var(--ez),
+    box-shadow 0.3s,
+    border-color 0.3s;
+  animation:
+    pkIn 0.8s var(--ez) calc(0.35s + var(--p) * 90ms) backwards,
+    pkBob 6s ease-in-out calc(var(--p) * -1.2s) infinite;
+}
+.pk .chip {
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  max-width: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.15;
+  justify-content: flex-start;
+  border-radius: 16px;
+  z-index: 2;
+  background: var(--cg);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.pk.on {
+  border-color: var(--ac);
+  box-shadow:
+    0 0 0 3px var(--acs),
+    var(--sh);
+  z-index: 20;
+  transform: translate(
+      calc(var(--px, 0) * var(--z) * 9px),
+      calc(var(--py, 0) * var(--z) * 9px)
+    )
+    rotate(0deg) scale(1.05);
+}
+.pk:hover {
+  z-index: 21;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.28);
+  transform: translate(
+      calc(var(--px, 0) * var(--z) * 9px),
+      calc(var(--py, 0) * var(--z) * 9px)
+    )
+    rotate(0deg) scale(1.07);
+}
+.pk:active {
+  scale: 0.97;
+}
+.hs.fx-paused .pk {
+  animation-play-state: paused;
+}
+@keyframes pkIn {
+  from {
+    opacity: 0;
+    scale: 0.82;
+  }
+}
+@keyframes pkBob {
+  50% {
+    translate: 0 -9px;
+  }
+}
+.fx-lite .pk {
+  animation: pkIn 0.8s var(--ez) calc(0.35s + var(--p) * 90ms) backwards;
+}
+@media (max-width: 900px) {
+  .hgrid {
+    grid-template-columns: 1fr;
+  }
+  .hs {
+    justify-self: center;
+    max-width: 380px;
+    margin-top: 12px;
+  }
+}
+@media (max-width: 620px) {
+  .pk {
+    animation: pkIn 0.8s var(--ez) calc(0.35s + var(--p) * 90ms) backwards;
+  }
+}
+.pk {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.pk::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -60%;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+  transform: skewX(-18deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.pk.hit::after {
+  animation: pkSweep 0.9s ease-out;
+}
+@keyframes pkSweep {
+  0% {
+    left: -60%;
+    opacity: 1;
+  }
+  100% {
+    left: 130%;
+    opacity: 1;
+  }
+}
+.hs .pk.on img {
+  transform: scale(1.14);
+}
+.pk .chip {
+  transition: transform 0.45s var(--ez);
+}
+.pk.on .chip {
+  transform: translateY(-5px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pk.hit::after {
+    animation: none;
+  }
+  .hs .pk.on img,
+  .pk.on .chip {
+    transform: none;
+  }
+}

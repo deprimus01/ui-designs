@@ -1,0 +1,57 @@
+.fld {
+  display: grid;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.chps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font: 500 14px inherit;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+.chp i {
+  font-size: 14px;
+  color: var(--ac);
+  transition: color 0.2s;
+}
+.chp:hover {
+  border-color: var(--ac);
+}
+.chp:active {
+  transform: scale(0.97);
+}
+.chp[aria-checked="true"] {
+  background: var(--ac);
+  border-color: var(--ac);
+  color: #fff;
+}
+.chp[aria-checked="true"] i {
+  color: #fff;
+}
+.err {
+  font-size: 13px;
+  font-weight: 500;
+  color: #d70015;
+}
+:root[data-theme="dark"] .err {
+  color: #ff6961;
+}

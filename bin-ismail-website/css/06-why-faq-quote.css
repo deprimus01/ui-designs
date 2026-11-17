@@ -1,0 +1,164 @@
+/* why, reviews, steps */
+.why {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  margin-top: 44px;
+}
+.why > div > i {
+  font-size: 26px;
+  color: var(--ac);
+  margin-bottom: 16px;
+}
+.why h3 {
+  font-size: 19px;
+  margin-bottom: 6px;
+}
+.why p {
+  color: var(--mut);
+  font-size: 15px;
+}
+.rev {
+  border-radius: 36px;
+  padding: clamp(32px, 6vw, 64px);
+  text-align: center;
+}
+.rev h2,
+.rev .lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+.rev .btn {
+  margin-top: 28px;
+}
+.stars {
+  color: #ff9f0a;
+  font-size: 22px;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 44px;
+}
+.n {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--bg);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.steps h3 {
+  font-size: 21px;
+  margin-bottom: 6px;
+}
+.steps p {
+  color: var(--mut);
+}
+/* faq */
+.faq {
+  margin-top: 36px;
+  background: var(--card);
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+  padding: 0 24px;
+}
+details {
+  border-bottom: 1px solid var(--line);
+}
+details:last-child {
+  border: 0;
+}
+summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 20px 0;
+  font-weight: 600;
+  font-size: 18px;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary i {
+  color: var(--ac);
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+details[open] summary i {
+  transform: rotate(45deg);
+}
+details p {
+  color: var(--mut);
+  padding: 0 0 20px;
+  max-width: 60ch;
+}
+/* quote */
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+}
+.cl {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.cl:first-of-type {
+  margin-top: 28px;
+}
+.cl i {
+  width: 20px;
+  color: var(--ac);
+  text-align: center;
+}
+.form {
+  border-radius: 32px;
+  padding: clamp(22px, 4vw, 34px);
+  display: grid;
+  gap: 16px;
+}
+label {
+  display: grid;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+input,
+select,
+textarea {
+  font: 400 16px inherit;
+  font-family: inherit;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  width: 100%;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0;
+  border-color: var(--ac);
+  box-shadow: 0 0 0 4px var(--acs);
+}
+.fn {
+  font-size: 13px;
+  color: var(--mut);
+  text-align: center;
+}

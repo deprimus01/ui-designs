@@ -1,0 +1,255 @@
+/* categories */
+.cats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: clamp(200px, 22vw, 260px);
+  gap: 12px;
+  margin-top: 40px;
+}
+.c0 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.c3,
+.c4,
+.c5 {
+  grid-column: span 2;
+}
+.c1,
+.c2 {
+  grid-column: span 1;
+}
+.cats .chip {
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  max-width: none;
+  padding: 11px 16px;
+  border-radius: 20px;
+  font-weight: 400;
+  background: var(--cg);
+}
+.cats .chip i {
+  color: var(--ac);
+  font-size: 18px;
+}
+.cats .chip b {
+  display: block;
+  font-size: 15px;
+  line-height: 1.2;
+}
+.cats .chip small {
+  display: block;
+  font-size: 12px;
+  color: var(--mut);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+/* services */
+.svc {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 44px;
+  background: var(--card);
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.svc-i {
+  padding: 28px 26px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.svc-i:nth-child(4n) {
+  border-right: 0;
+}
+.svc-i:nth-child(n + 5) {
+  border-bottom: 0;
+}
+.ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--acs);
+  color: var(--ac);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+.svc h3 {
+  font-size: 19px;
+  margin-bottom: 6px;
+}
+.svc p {
+  color: var(--mut);
+  font-size: 15px;
+  line-height: 1.4;
+}
+/* nfc */
+.nfc {
+  border-radius: 40px;
+  padding: clamp(28px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  background: #0b0b0f;
+  position: relative;
+  overflow: hidden;
+}
+.nfc h2 {
+  max-width: 14ch;
+}
+.nfc .lead {
+  color: #a1a1a6;
+}
+.ticks {
+  margin-top: 26px;
+  display: grid;
+  gap: 14px;
+  color: #e5e5ea;
+  font-size: 16px;
+}
+.ticks i {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: inline-grid;
+  place-items: center;
+  margin-right: 12px;
+  color: #5ab6ff;
+  font-size: 14px;
+}
+.nfc .btn-glass {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.demo {
+  position: relative;
+  height: 380px;
+  display: grid;
+  place-items: center;
+}
+.phone {
+  width: 196px;
+  height: 380px;
+  border-radius: 38px;
+  border: 7px solid #2a2a2e;
+  background: #111;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+.screen {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: linear-gradient(180deg, #14233a, #0b0b0f);
+}
+.hint {
+  position: absolute;
+  top: 44%;
+  color: #a1a1a6;
+  font-size: 13px;
+  text-align: center;
+  padding: 0 22px;
+  transition: opacity 0.4s;
+}
+.contact {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 22px;
+  padding: 18px 14px;
+  width: 100%;
+  color: #fff;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #4db2ff, #0a58d6);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 8px;
+  font-weight: 700;
+}
+.contact b {
+  display: block;
+}
+.contact small {
+  display: block;
+  color: #a1a1a6;
+  font-size: 12px;
+}
+.cbtns {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 13px;
+}
+.cbtns span {
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.cbtns .g {
+  background: #25d366;
+  color: #06330f;
+  font-weight: 600;
+}
+.nfc-card {
+  position: absolute;
+  bottom: -6px;
+  width: 250px;
+  padding: 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  background: linear-gradient(145deg, #2a8cff, #0a3fa8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 1.1s cubic-bezier(0.3, 0.8, 0.2, 1),
+    opacity 0.6s;
+  transform: rotate(-6deg) translateX(0);
+}
+.nfc-card b {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+.nfc-card small {
+  font-size: 11px;
+  opacity: 0.8;
+}
+.nfc-card > i {
+  margin-left: auto;
+  font-size: 20px;
+  opacity: 0.9;
+}
+.demo.tapped .nfc-card {
+  transform: translateY(-190px) rotate(0) scale(0.7);
+  opacity: 0;
+  transition-delay: 0s, 0.7s;
+}
+.demo.tapped .contact {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.8s;
+}
+.demo.tapped .hint {
+  opacity: 0;
+}
